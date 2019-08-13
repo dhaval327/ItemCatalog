@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "flash.html" %}
+    <h1>Create a new item!</h1>
+    <div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type ="text" maxlength="50" class="form-control" name="name" placeholder="Name of the item">
+
+					<label for="description">Description:</label>
+					<textarea class="form-control" maxlength="250" rows="3" name="description" placeholder="Description of the item"></textarea>
+
+					<label for="price">Price:</label>
+					<div class="input-group">
+						<div class="input-group-addon">$</div>
+						<input type ="text" class="form-control" maxlength="10" name="price" placeholder="Price in $">
+					</div>
+
+					<label for="cat">Category:</label>
+					
+					<div class="radio">
+						<select name='category' onchange='CheckCategory(this.value);'>
+							{% for i in categories %}
+								<option value={{ i.id }}>{{ i.name }}</option>
+							{% endfor %}
+							<option value="other">Other</option>
+						</select>
+						
+					</div>
+
+					<div>
+						<input type="text" name="other" id="other" style='display:none;' placeholder="Please Specify"/>
+					</div>
+					
+					<button type="submit" class="btn btn-default" id="submit" type="submit"> Create</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	{% endblock %}

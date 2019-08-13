@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "flash.html" %}
+<h2> Are you sure you want to delete {{item.name}}? </h2>
+<div>
+	<form action="#" method = 'post'>
+		<button type="submit" id="submit" type="submit" class="btn delete-btn">
+		<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete</button>
+	</form>
+	<a href = "{{url_for('show_item_description', category_id=item.category_id, item_id=item.id)}}">
+		<button class="btn delete-btn">
+		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+	</a>
+</div>
+
+{% endblock %}

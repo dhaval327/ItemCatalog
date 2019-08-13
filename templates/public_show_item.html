@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "flash.html" %}
+<div>
+    <h1>{{ item.name }}</h1>
+</div>
+    <br>
+<div>
+    <p>{{ item.description }}</p>
+</div>
+<div>
+    <p>{{ item.price }}</p>
+</div>
+{% endblock %}

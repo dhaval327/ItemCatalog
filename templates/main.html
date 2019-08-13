@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+		 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+		  </script>
+		  <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer>
+		  </script>
+		  <!-- END Pre-requisites --><!-- Continuing the <head> section -->
+		  <script>
+			function start() {
+			  gapi.load('auth2', function() {
+				auth2 = gapi.auth2.init({ 
+				  client_id: '746091318414-1dkverkfvu2jn3bihbr09esf77gc10bk.apps.googleusercontent.com',
+				});
+			  });
+			}
+		  </script>
+
+		<script type="text/javascript">
+			function CheckCategory(val){
+				var element=document.getElementById('other');
+				if(val=='other')
+					element.style.display='block';
+				else  
+					element.style.display='none';
+			}
+		</script> 
+	</head>
+	<body>
+		<div class="container">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "flash.html" %}
+    <div>
+        <h1>{{ item.name }}</h1>
+    </div>
+        <br>
+    <div>
+        <p>{{ item.description }}</p>
+    </div>
+    <div>
+        <p>{{ item.price }}</p>
+    </div>
+    <a href="{{ url_for('delete_item', category_id=item.category_id, item_id=item.id) }}">
+        <button class="btn">Delete this Item</button>
+    </a>
+    <a href="{{ url_for('edit_item', category_id=item.category_id, item_id=item.id) }}">
+        <button class="btn">Edit this Item</button>
+    </a>
+{% endblock %}

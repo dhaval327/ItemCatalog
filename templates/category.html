@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "flash.html" %}
+    <h1>{{ category.name }}</h1>
+    <div class="grid-container">
+    {% for i in items %}
+    <div class="category-holder">
+        <h1> {{ i.name }} </h1>
+        <br>
+        <a class="category-link" href="{{ url_for('show_item_description', category_id=category.id, item_id=i.id) }}">
+                <button class="btn">Show Description</button>
+        </a>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}
